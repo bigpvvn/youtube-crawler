@@ -34,6 +34,11 @@ Ce projet est un système automatisé complet pour la découverte, le téléchar
 ```
 crawl/
 ├── run.py                 # Script principal d'exécution
+├── accounts/              # Dossier des comptes YouTube (À CRÉER)
+│   └── [nom_compte]/
+│       ├── client_secrets.json    # Identifiants OAuth
+│       ├── credentials.pickle     # Tokens d'authentification
+│       └── tokens.json           # Tokens au format JSON
 ├── src/
 │   ├── crawlers.py        # Module de crawling YouTube
 │   ├── downloader.py      # Module de téléchargement
@@ -43,13 +48,8 @@ crawl/
 │   └── media/
 │       ├── download/      # Vidéos téléchargées
 │       ├── videos/        # Vidéos éditées
-│       ├── entertainment_videos/  # Vidéos d'entertainment
+│       ├── entertainment_videos/  # Vidéos d'entertainment (À REMPLIR)
 │       └── uploaded_videos.json   # Historique des uploads
-└── accounts/
-    └── [nom_compte]/
-        ├── client_secrets.json    # Identifiants OAuth
-        ├── credentials.pickle     # Tokens d'authentification
-        └── tokens.json           # Tokens au format JSON
 ```
 
 ## 📦 Dépendances
@@ -72,6 +72,14 @@ pip install -r requirements.txt
 - `rich` : Interface console colorée
 
 ## ⚙️ Configuration
+
+### 0. Préparation des dossiers
+
+#### Créer le dossier accounts
+```bash
+# À la racine du projet, créez le dossier accounts
+mkdir accounts
+```
 
 ### 1. Configuration de l'API YouTube
 
@@ -96,7 +104,23 @@ pip install -r requirements.txt
 
 ### 2. Configuration des vidéos d'entertainment
 
-Placez vos vidéos d'entertainment dans le dossier `src/media/entertainment_videos/`. Ces vidéos seront utilisées pour créer des superpositions sur les vidéos téléchargées.
+**⚠️ IMPORTANT :** Remplissez le dossier `src/media/entertainment_videos/` avec des vidéos de haute qualité.
+
+#### Recommandations pour les vidéos d'entertainment :
+- **Format** : MP4 recommandé
+- **Qualité** : 1080p minimum pour une superposition de qualité
+- **Durée** : 30 secondes à 5 minutes (sera automatiquement adaptée)
+- **Contenu** : Vidéos sans audio ou avec audio que vous pouvez supprimer
+- **Quantité** : Au moins 5-10 vidéos différentes pour la variété
+
+#### Exemples de contenu approprié :
+- Animations abstraites
+- Effets visuels
+- Vidéos de fond
+- Transitions créatives
+- Éléments graphiques
+
+Ces vidéos seront utilisées pour créer des superpositions sur les vidéos téléchargées, améliorant ainsi l'aspect visuel de votre contenu.
 
 ### 3. Configuration des paramètres de recherche
 
