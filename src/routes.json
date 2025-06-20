@@ -1,0 +1,11 @@
+{
+
+    "youtube": {
+        "base_search_url": "https://www.youtube.com/results?search_query=",
+        "base_video_url": "https://www.youtube.com/watch?v=",
+        "base_channel_url": "https://www.youtube.com/channel/",
+        "base_playlist_url": "https://www.youtube.com/playlist?list=",
+        "base_short_url": "https://youtu.be/"
+    }
+
+}
